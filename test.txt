@@ -1,0 +1,4 @@
+Invoice #12345
+Vendor: Test Corp
+Total: $1000.00
+Date: 01/15/2024
