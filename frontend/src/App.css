@@ -1,38 +1,86 @@
-.App {
-    text-align: center;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer components {
+  .form-input {
+    @apply mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 
+           focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md 
+           shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 
+           focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md 
+           shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 
+           focus:ring-offset-2 focus:ring-blue-500;
+  }
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
 }
 
-.App-link {
-    color: #61dafb;
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Animation for upload area */
+.upload-area {
+  transition: all 0.3s ease-in-out;
+}
+
+.upload-area:hover {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+}
+
+/* Status badges animation */
+.status-badge {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Table hover effects */
+.table-row:hover {
+  background-color: #f8fafc;
+}
+
+/* Loading spinner */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
